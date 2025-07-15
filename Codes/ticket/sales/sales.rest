@@ -1,0 +1,100 @@
+### Arquivo de Testes para o Microsserviço de Vendas
+
+# ===============================================
+# 1. VERIFICAÇÃO DO SERVIÇO
+# ===============================================
+
+### Verifica se o serviço está no ar
+GET http://localhost:4000/status
+
+
+###
+# ===============================================
+# 2. TESTES COMPLETOS DOS EVENTOS
+# ===============================================
+
+### CRIA um novo evento
+POST http://localhost:4000/events
+Content-Type: application/json
+
+{
+    "description": "Show da Banda Punk Rock - SESSÃO EXTRA",
+    "type": "CONCERT",
+    "date": "2025-12-10T20:00:00",
+    "startSales": "2025-10-01T09:00:00",
+    "endSales": "2025-12-09T23:59:00",
+    "price": 250.50
+}
+
+### LISTA todos os eventos
+# Verifique se o evento criado acima aparece na lista
+GET http://localhost:4000/events
+
+
+### BUSCA um evento por ID
+# Copie o ID do evento que você criou e cole na URL abaixo
+GET http://localhost:4000/events/a9a13f1b-17dd-4d54-9f19-b408a6001b33
+
+
+### ATUALIZA um evento
+# Copie o ID do evento que você criou e cole na URL abaixo
+PUT http://localhost:4000/events/a9a13f1b-17dd-4d54-9f19-b408a6001b33
+Content-Type: application/json
+
+{
+    "description": "Show da Banda A - SESSÃO EXTRA",
+    "type": "CONCERT",
+    "date": "2025-12-10T20:00:00",
+    "startSales": "2025-10-01T09:00:00",
+    "endSales": "2025-12-09T23:59:00",
+    "price": 250.50
+}
+
+
+###
+# ===============================================
+# 3. TESTES COMPLETOS DAS VENDAS
+# ===============================================
+
+### CRIA uma nova venda para o evento
+# Copie o ID do evento criado acima e cole no "eventId" abaixo
+POST http://localhost:4000/sales
+Content-Type: application/json
+
+{
+    "userId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "eventId": "a9a13f1b-17dd-4d54-9f19-b408a6001b33",
+    "saleStatus": "OPEN"
+}
+
+
+### LISTA todas as vendas
+# Verifique se a venda criada acima aparece na lista
+GET http://localhost:4000/sales
+
+
+### ATUALIZA o status de uma venda
+# Copie o ID da venda que você criou e cole na URL abaixo
+PATCH http://localhost:4000/sales/5c127e32-e057-42ea-a8d2-179cd9399b1b
+Content-Type: application/json
+
+{
+    "saleStatus": "PAID"
+}
+
+
+### DELETA a venda
+# Copie o ID da venda que você criou e cole na URL abaixo
+DELETE http://localhost:4000/sales/5c127e32-e057-42ea-a8d2-179cd9399b1b
+
+
+###
+# ===============================================
+# 4. TESTE FINAL DE EXCLUSÃO
+# ===============================================
+
+### DELETA o evento
+# Lembre-se que isso só funcionará se TODAS as vendas
+# associadas a este evento já tiverem sido deletadas.
+DELETE http://localhost:4000/events/d9caae7c-a353-454b-befc-be325d67cec9
+
