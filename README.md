@@ -51,10 +51,10 @@ A documentação completa de todos os endpoints disponíveis pode ser encontrada
 ## Como Executar o Projeto
 
 1.  **Pré-requisitos:**
-    - JDK 17 ou superior.
+    - JDK 17.
     - Maven.
     - Docker (para rodar o banco de dados PostgreSQL, se estiver usando o `docker-compose.yaml`).
-    - Um cliente de API como Postman ou Insomnia.
+    - Um cliente de API como Postman ou Rest.
 
 2.  **Ordem de Inicialização:**
     - Inicie o microsserviço `nameserver` (Servidor Eureka) primeiro.
