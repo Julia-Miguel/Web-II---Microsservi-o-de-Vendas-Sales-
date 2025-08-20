@@ -1,0 +1,77 @@
+/* src/components/layout/Navbar.css (CORRIGIDO) */
+.navbar {
+    background: var(--bg-secondary);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centraliza verticalmente */
+    height: 80px;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.navbar-logo {
+    color: var(--text-primary);
+    justify-self: start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    margin: 0; /* Remove margem padrão da ul */
+}
+
+.nav-item {
+    height: 80px;
+}
+
+.nav-links {
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    transition: all 0.2s ease-out;
+    border-bottom: 3px solid transparent; /* Borda invisível para manter o alinhamento */
+}
+
+.nav-links svg {
+    margin-right: 8px;
+}
+
+.nav-links:hover {
+    color: var(--link-color);
+    border-bottom: 3px solid var(--link-color);
+}
+
+.nav-links.active {
+    color: var(--link-color);
+    font-weight: bold;
+    border-bottom: 3px solid var(--link-color);
+}

@@ -1,0 +1,44 @@
+/* src/index.css */
+
+/* TEMA CLARO (PADRÃO) */
+:root, body.light-mode {
+  --bg-primary: #f8f9fa;      /* Fundo principal bem claro */
+  --bg-secondary: #ffffff;    /* Fundo de containers, tabelas, forms */
+  --bg-tertiary: #e9ecef;     /* Fundo de cabeçalhos de tabela */
+  --text-primary: #212529;    /* Cor do texto principal */
+  --text-secondary: #6c757d;  /* Cor de texto mais suave */
+  --border-color: #dee2e6;     /* Cor das bordas */
+  --link-color: #0d6efd;       /* Cor dos links e botões primários */
+  --input-bg: #ffffff;        /* Fundo dos inputs */
+  --input-text: #212529;       /* Texto dos inputs */
+  --input-focus-border: #86b7fe;
+  --input-focus-shadow: rgba(13, 110, 253, 0.25);
+}
+
+/* TEMA ESCURO */
+body.dark-mode {
+  --bg-primary: #36393f;
+  --bg-secondary: #2f3136;
+  --bg-tertiary: #202225;
+  --text-primary: #f5f5f5;
+  --text-secondary: #8a8c90;
+  --border-color: #40444b;
+  --link-color: #6e86d6;
+  --input-bg: #40444b;
+  --input-text: #f5f5f5;
+  --input-focus-border: #6e86d6;
+  --input-focus-shadow: rgba(110, 134, 214, 0.25);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
